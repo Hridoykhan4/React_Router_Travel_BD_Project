@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "place_name": "Rangamati",
+    "description": "Rangamati is a hill district known for its serene lakes, lush hills, indigenous communities, and vibrant tribal culture.",
+    "famous_for": "Scenic beauty, Kaptai Lake, tribal culture",
+    "image": "https://media.istockphoto.com/id/2200189877/photo/sky-view-after-sunset-in-sajek-valley-which-is-most-popular-in-bangladesh.webp?a=1&b=1&s=612x612&w=0&k=20&c=N28DvUlduCEzNoVAAwSanZjpxEqz6T-0_nG67vpn4LQ="
+  },
+  {
+    "id": 2,
+    "place_name": "Sundarbans",
+    "description": "The Sundarbans is the largest mangrove forest in the world, renowned for its biodiversity including the Bengal tiger and various bird species.",
+    "famous_for": "Bengal tiger, mangrove forest, wildlife",
+    "image": "https://media.istockphoto.com/id/1890258882/photo/the-bengal-tiger-from-mangroves-of-sundarbans.webp?a=1&b=1&s=612x612&w=0&k=20&c=uRuYBoABEHx-w6lnGU2RNv-nkGhOIlTzTGtd5QLv-zM="
+  },
+  {
+    "id": 3,
+    "place_name": "Cox's Bazar",
+    "description": "Cox's Bazar is famous for having the world's longest natural sandy sea beach, stretching over 120 kilometers along the Bay of Bengal.",
+    "famous_for": "Longest sea beach, marine drive, seafood",
+    "image": "https://media.istockphoto.com/id/2158765730/photo/filipino-boats-in-shallow-water-while-moored.webp?a=1&b=1&s=612x612&w=0&k=20&c=sZ5O1ua3Ib6Q6OI5IBJj-O3MYlz3N8_18kcDqorSUp4="
+  },
+  {
+    "id": 4,
+    "place_name": "Sajek Valley",
+    "description": "Sajek Valley is a picturesque hill station located in the Chittagong Hill Tracts, offering stunning panoramic views and serene landscapes.",
+    "famous_for": "Cloud view, hill station, trekking",
+    "image": "https://media.istockphoto.com/id/2200189493/photo/hill-view-scenery-of-bandarban-district-of-bangladesh.webp?a=1&b=1&s=612x612&w=0&k=20&c=wU-UUeSbM0A0Gn8QtcNhiYXnkibIjbBl5PgRkqALxzY="
+  },
+  {
+    "id": 5,
+    "place_name": "Ratargul",
+    "description": "Ratargul Swamp Forest is a freshwater swamp forest located in Sylhet, known for its vibrant greenery, boat rides, and diverse wildlife.",
+    "famous_for": "Swamp forest, boat rides, wildlife",
+    "image": "https://media.istockphoto.com/id/2193289579/photo/a-scenic-view-of-ratargul-swamp-forest-sylhet-bangladesh.webp?a=1&b=1&s=612x612&w=0&k=20&c=euPadqKYzwVPuc354td91q4ZEJB0Fjce8xAOkXiNebE="
+  },
+  {
+    "id": 6,
+    "place_name": "Saint Martin",
+    "description": "Saint Martin's Island is a coral island in the Bay of Bengal, renowned for its crystal-clear waters, coral reefs, and diverse marine life.",
+    "famous_for": "Coral island, clear waters, marine life",
+    "image": "https://images.unsplash.com/photo-1590185105286-a144b8c23fe4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FpbnQlMjBtYXJ0aW58ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "id": 7,
+    "place_name": "Sonargaon",
+    "description": "Sonargaon, also known as the 'Golden City,' is a historic town near Dhaka, featuring ancient ruins, museums, and traditional architecture.",
+    "famous_for": "Historical sites, museum, traditional crafts",
+    "image": "https://media.istockphoto.com/id/1311344334/photo/abdul-hamid-mosque-in-sonargaon-town-banglade.webp?a=1&b=1&s=612x612&w=0&k=20&c=kn8uTJrLXFdYsQjBDmWDzNsZhAn1VOvxNq6SRHsCQdo="
+  }
+]
