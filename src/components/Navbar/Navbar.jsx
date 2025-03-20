@@ -18,9 +18,9 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-red-500 font-bold underline" : "text-black"
           }
-          to="/carrier"
+          to="/listedPlaces"
         >
-          Carrier
+          Listed Places
         </NavLink>
       </li>
       <li>

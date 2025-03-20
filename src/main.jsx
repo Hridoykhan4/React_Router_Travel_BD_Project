@@ -7,7 +7,8 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import DashBoard from "./components/DashBoard/DashBoard";
 import Home from "./components/Home/Home";
 import PlaceDetail from "./components/PlaceDetail/PlaceDetail";
-
+import ListedPlaces from "./components/ListedPlaces/ListedPlaces";
+import { Toaster } from "react-hot-toast";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,10 +25,15 @@ const router = createBrowserRouter([
         element: <DashBoard></DashBoard>,
       },
       {
-        path: '/places/:placesId',
+        path: "/listedPlaces",
+        element: <ListedPlaces></ListedPlaces>,
+        loader: () => fetch("/places.json"),
+      },
+      {
+        path: "/places/:placesId",
         element: <PlaceDetail></PlaceDetail>,
-        loader: () => fetch('/places.json')
-      }
+        loader: () => fetch("/places.json"),
+      },
     ],
   },
 ]);
@@ -35,5 +41,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router}></RouterProvider>
+    <Toaster></Toaster>
   </StrictMode>
 );
