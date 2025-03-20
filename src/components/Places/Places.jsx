@@ -40,10 +40,14 @@ const Places = () => {
 
   return (
     <div className="my-3">
-      <h2 className="font-bold text-center text-3xl">Total Places: {tempPlaces.length}</h2>
-      {
-        query && <h2 className="font-bold text-center text-3xl">Searched Places: {places.length}</h2>
-      }
+      <h2 className="font-bold text-center text-3xl">
+        Total Places: {tempPlaces.length}
+      </h2>
+      {query && (
+        <h2 className="font-bold text-center text-3xl">
+          Searched Places: {places.length}
+        </h2>
+      )}
       <div className="flex gap-4 my-3 flex-col justify-start items-start md:flex-row">
         <label className="input  input-accent">
           <svg

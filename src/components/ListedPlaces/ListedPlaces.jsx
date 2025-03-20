@@ -10,7 +10,7 @@ import Place from "../Place/Place";
 const ListedPlaces = () => {
   const [visitedPlaces, setVisitedPlaces] = useState([]);
   const [wishToGoPlaces, setWishToGoPlaces] = useState([]);
-
+  const [sort, setSort] = useState("");
   const places = useLoaderData();
 
   useEffect(() => {
@@ -32,21 +32,41 @@ const ListedPlaces = () => {
     setWishToGoPlaces(wishList);
   }, [places]);
 
+  //sort
+  const handleSort = (sortType) => {
+    setSort(sortType);
+    if (sortType === "cost") {
+      const moneySort = [...visitedPlaces].sort(
+        (a, b) => a.cost_price - b.cost_price
+      );
+      console.log(moneySort);
+    }
+    if (sortType === "rating") {
+      const ratingSort = [...visitedPlaces].sort((a, b) => b.rating - a.rating);
+      setVisitedPlaces(ratingSort);
+      setWishToGoPlaces(ratingSort);
+    }
+  };
+
   return (
     <div className="my-3">
       <h3 className="text-2xl font-bold mb-2 underline text-red-600">
         Listed Places
       </h3>
 
-      <div className="flex justify-center items-center">
+      <div className="flex mb-6 justify-center items-center">
         <details className="dropdown">
-          <summary className="btn bg-green-600 text-white m-1">Sort By</summary>
+          <summary className="btn bg-green-600 px-9  text-white m-1">
+            {sort
+              ? `Sort By ` + sort[0].toUpperCase() + sort.slice(1)
+              : "Sort By"}
+          </summary>
           <ul className="menu dropdown-content  rounded-box z-1 w-52 p-2">
             <li>
-              <a>Item 1</a>
+              <a onClick={() => handleSort("cost")}>Cost</a>
             </li>
             <li>
-              <a>Item 2</a>
+              <a onClick={() => handleSort("rating")}>Rating</a>
             </li>
           </ul>
         </details>

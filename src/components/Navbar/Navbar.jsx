@@ -37,9 +37,16 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar w-11/12 mx-auto p-0">
+    <div className="navbar p-0 w-11/12 items-center mx-auto">
       <div className="navbar-start">
-        <div className="dropdown">
+        <a className="flex-1 text-xl">Cholo Ghure Ashi 🤍</a>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">{links}</ul>
+      </div>
+      <div className="navbar-end">
+        <a className="btn">Places</a>
+        <div className="dropdown dropdown-end ms-4">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,18 +66,11 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="flex flex-col dropdown-content bg-base-100 p-2 rounded-box shadow text-right text-xl w-52 font-semibold items-end menu menu-sm mt-3 right-0 space-y-3 z-10"
           >
             {links}
           </ul>
         </div>
-        <a className="text-xl">Job Hunter</a>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
       </div>
     </div>
   );

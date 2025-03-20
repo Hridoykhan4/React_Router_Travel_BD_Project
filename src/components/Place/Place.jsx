@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 
 const Place = ({ place }) => {
-  const { id, image, description: desc, place_name: name, cost_price, rating } = place;
+  const {
+    id,
+    image,
+    description: desc,
+    place_name: name,
+    cost_price,
+    rating,
+  } = place;
 
-  console.log(cost_price);
   return (
     <Link to={`/places/${id}`}>
       <div className="card bg-base-100 p-4 border-black/39 rounded-lg border shadow-sm">
@@ -18,8 +24,12 @@ const Place = ({ place }) => {
           <p>{desc}</p>
           <p className="border-t border-dashed border-black/50"></p>
           <div className="card-actions justify-end">
-            <div className="badge badge-outline">Cost: {cost_price}</div>
-            <div className="badge badge-outline">Rating: {rating}</div>
+            <div className="badge badge-outline text-lg ">
+              <span className="font-bold">Cost</span>: {cost_price} Taka
+            </div>
+            <div className="badge badge-outline text-lg ">
+              <span className="font-bold">Rating</span>: {rating} 🔅
+            </div>
           </div>
         </div>
       </div>
