@@ -5,6 +5,7 @@ const Places = () => {
   const [places, setPlaces] = useState([]);
   const [tempPlaces, setTempPlaces] = useState([]);
   const [query, setQuery] = useState("");
+  const [counter, setCounter] = useState(4);
   useEffect(() => {
     const loadData = async () => {
       const res = await fetch("/places.json");
@@ -79,10 +80,24 @@ const Places = () => {
       </div>
 
       <div className="grid my-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {places.map((place) => (
+        {places.slice(0, counter).map((place) => (
           <Place key={place.id} place={place}></Place>
         ))}
       </div>
+
+      {counter > 4 ? (
+        ""
+      ) : (
+        <div className="flex justify-center my-8">
+          <a
+            onClick={() => setCounter(places.length)}
+            className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 cursor-pointer hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
+          >
+            <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+            <span className="relative">See all</span>
+          </a>
+        </div>
+      )}
     </div>
   );
 };

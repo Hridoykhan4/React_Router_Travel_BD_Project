@@ -9,6 +9,7 @@ import Home from "./components/Home/Home";
 import PlaceDetail from "./components/PlaceDetail/PlaceDetail";
 import ListedPlaces from "./components/ListedPlaces/ListedPlaces";
 import { Toaster } from "react-hot-toast";
+import Bio from "./components/Bio/Bio";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <DashBoard></DashBoard>,
+        loader: () => fetch('/places.json')
       },
       {
         path: "/listedPlaces",
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
         element: <PlaceDetail></PlaceDetail>,
         loader: () => fetch("/places.json"),
       },
+      {
+        path: '/bio',
+        element: <Bio></Bio>
+      }
     ],
   },
 ]);

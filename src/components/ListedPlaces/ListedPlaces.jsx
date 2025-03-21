@@ -39,7 +39,7 @@ const ListedPlaces = () => {
       const moneySort = [...visitedPlaces].sort(
         (a, b) => a.cost_price - b.cost_price
       );
-      console.log(moneySort);
+      setVisitedPlaces(moneySort);
     }
     if (sortType === "rating") {
       const ratingSort = [...visitedPlaces].sort((a, b) => b.rating - a.rating);

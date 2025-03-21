@@ -23,7 +23,7 @@ const PlaceDetail = () => {
         className: "font-semibold !bg-red-600 !text-white",
       });
     } else {
-      toast.success("Successfully,Marked As Visted", {
+      toast.success("Successfully,Marked As Visited", {
         position: "bottom right",
         className: "font-semibold !bg-green-700 !text-white",
       });
