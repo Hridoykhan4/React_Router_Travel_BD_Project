@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -54,12 +55,16 @@ const Navbar = () => {
     </>
   );
 
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    document.querySelector("html").setAttribute("data-theme", theme);
+  }, [theme]);
+
   const handleTheme = (e) => {
-    if (e.target.checked) {
-      document.querySelector("html").setAttribute("data-theme", "dark");
-    } else {
-      document.querySelector("html").setAttribute("data-theme", "light");
-    }
+    const newTheme = e.target.checked ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
@@ -75,9 +80,9 @@ const Navbar = () => {
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
+            checked={theme === "dark"}
             onChange={handleTheme}
             className="theme-controller"
-            value="synthwave"
           />
 
           {/* sun icon */}

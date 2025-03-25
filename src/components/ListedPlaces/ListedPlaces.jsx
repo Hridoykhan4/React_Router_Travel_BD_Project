@@ -4,6 +4,8 @@ import "react-tabs/style/react-tabs.css";
 import {
   getStoredMarkVisitedPlace,
   getStoredWishedPlaces,
+  removeFromVisited,
+  removeFromWish,
 } from "../../utils/addToDB";
 import { useLoaderData } from "react-router-dom";
 import Place from "../Place/Place";
@@ -48,6 +50,17 @@ const ListedPlaces = () => {
     }
   };
 
+  const handleRemoveFromVisted = (id) => {
+    removeFromVisited(id);
+    const remaining = visitedPlaces.filter((place) => place.id !== id);
+    setVisitedPlaces(remaining);
+  };
+  const handleRemoveFromWishList = (id) => {
+    removeFromWish(id);
+    const remaining = wishToGoPlaces.filter((place) => place.id !== id);
+    setWishToGoPlaces(remaining);
+  };
+
   return (
     <div className="my-3">
       <h3 className="text-2xl font-bold mb-2 underline text-red-600">
@@ -84,7 +97,12 @@ const ListedPlaces = () => {
           </h2>
           <div className="grid sm:grid-cols-2 grid-cols-1 gap-5">
             {visitedPlaces.map((place) => (
-              <Place key={place.id} place={place}></Place>
+              <Place
+                handleRemoveFromVisted={handleRemoveFromVisted}
+                fromVisited={true}
+                key={place.id}
+                place={place}
+              ></Place>
             ))}
           </div>
         </TabPanel>
@@ -94,7 +112,12 @@ const ListedPlaces = () => {
           </h2>
           <div className="grid sm:grid-cols-2 my-2 grid-cols-1 gap-5">
             {wishToGoPlaces.map((place) => (
-              <Place key={place.id} place={place}></Place>
+              <Place
+                handleRemoveFromWishList={handleRemoveFromWishList}
+                fromWishList={true}
+                key={place.id}
+                place={place}
+              ></Place>
             ))}
           </div>
         </TabPanel>

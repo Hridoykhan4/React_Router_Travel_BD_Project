@@ -30,13 +30,24 @@ const addToStoredWishList = (id) => {
       removeDelay: 2000,
     });
   } else {
-    toast.success('Added as Wish List', {
-      position:'top-right'
-    })
-    console.log('Jp');
+    toast.success("Added as Wish List", {
+      position: "top-right",
+    });
+    console.log("Jp");
     storedPlaces.push(id);
     localStorage.setItem("wish-places", JSON.stringify(storedPlaces));
   }
+};
+
+const removeFromVisited = (id) => {
+  const visitedPlace = getStoredMarkVisitedPlace();
+  const remaining = visitedPlace.filter((idx) => idx !== id);
+  localStorage.setItem("visited-places", JSON.stringify(remaining));
+};
+const removeFromWish = (id) => {
+  const visitedPlace = getStoredWishedPlaces();
+  const remaining = visitedPlace.filter((idx) => idx !== id);
+  localStorage.setItem("wish-places", JSON.stringify(remaining));
 };
 
 export {
@@ -44,4 +55,6 @@ export {
   addToStoredWishList,
   getStoredMarkVisitedPlace,
   getStoredWishedPlaces,
+  removeFromVisited,
+  removeFromWish
 };
